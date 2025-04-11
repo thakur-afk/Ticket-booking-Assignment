@@ -124,14 +124,27 @@ exports.Prisma.SeatScalarFieldEnum = {
   isBooked: 'isBooked'
 };
 
+exports.Prisma.UserScalarFieldEnum = {
+  id: 'id',
+  username: 'username',
+  email: 'email',
+  password: 'password'
+};
+
 exports.Prisma.SortOrder = {
   asc: 'asc',
   desc: 'desc'
 };
 
+exports.Prisma.QueryMode = {
+  default: 'default',
+  insensitive: 'insensitive'
+};
+
 
 exports.Prisma.ModelName = {
-  Seat: 'Seat'
+  Seat: 'Seat',
+  User: 'User'
 };
 
 /**
