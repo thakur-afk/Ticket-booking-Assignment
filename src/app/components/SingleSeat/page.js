@@ -1,7 +1,7 @@
 import React from "react";
 
 const SingleSeat = ({ seat }) => {
-  const isBooked = seat.isBooked;
+  const isBooked = seat?.isBooked || false;
   return (
     <div
       className={`w-10 h-10 rounded-xl flex items-center justify-center ${
