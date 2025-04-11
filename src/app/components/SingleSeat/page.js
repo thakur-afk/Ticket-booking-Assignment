@@ -1,6 +1,6 @@
 import React from "react";
 
-const SingleSeat = ({ seat }) => {
+const SingleSeat = ({ seat = { isBooked: false, id: 0 } }) => {
   const isBooked = seat?.isBooked || false;
   return (
     <div
@@ -8,7 +8,7 @@ const SingleSeat = ({ seat }) => {
         isBooked ? "bg-orange-300 " : "bg-green-400"
       }`}
     >
-      {seat.id}
+      {seat?.id}
     </div>
   );
 };
