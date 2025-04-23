@@ -6,7 +6,11 @@ const prisma = new PrismaClient();
 
 // Function to calculate distance between two seats (Euclidean)
 const distance = (a, b) => {
-  return Math.sqrt(Math.pow(a.row - b.row, 2) + Math.pow(a.col - b.col, 2));
+  const rowDiff = Math.abs(a.row - b.row);
+  const colDiff = Math.abs(a.col - b.col);
+
+  // adding more weights to row diff , for row prefrence than col prefrence.
+  return Math.sqrt(Math.pow(rowDiff * 2, 2) + Math.pow(colDiff, 2));
 };
 
 // Calculate total pairwise distance in a group of seats ==> [a,b,c]=>[a,b],[b,c],[a,c]
