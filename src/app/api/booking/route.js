@@ -70,6 +70,7 @@ export async function POST(request) {
           });
           const recentlyBooked = await prisma.seat.findMany({
             where: { id: { in: seatIds } },
+            orderBy: { id: "asc" },
           });
 
           return NextResponse.json(
@@ -114,6 +115,7 @@ export async function POST(request) {
 
     const recentlyBooked = await prisma.seat.findMany({
       where: { id: { in: idsToUpdate } },
+      orderBy: { id: "asc" },
     });
     const seats = await prisma.seat.findMany({ orderBy: { id: "asc" } });
     const availableSeatsCount = await prisma.seat.count({
